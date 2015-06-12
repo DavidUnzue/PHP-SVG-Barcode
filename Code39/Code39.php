@@ -102,7 +102,7 @@ class Code39 {
         }
         $str = '*'.$str.'*';
         $long = (strlen($str) + 3) * 12;
-        $width = $this->bw * $long;
+        $width = ($this->bw * $long) - 50; // -50 to reduce excessive width of barcode container
         $text = str_split($str);
         $img = '';
         $img .= "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n";
